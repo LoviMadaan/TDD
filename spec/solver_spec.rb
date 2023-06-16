@@ -1,7 +1,7 @@
 require_relative '../solver'
 require 'rspec'
 
-describe Solver do
+RSpec.describe Solver do
   describe '#factorial' do
     it 'returns 1 for 0 or 1' do
       expect(Solver.new.factorial(0)).to eq(1)
@@ -9,17 +9,17 @@ describe Solver do
     end
 
     it 'raises an error for negative numbers' do
-      expect { Solver.new.factorial(-1) }.to raise_error(ArgumentError)
+      expect { subject.factorial(-1) }.to raise_error(ArgumentError)
     end
 
     it 'returns the correct factorial for positive numbers' do
-      expect(Solver.new.factorial(7)).to eq(5040)
+      expect(subject.factorial(7)).to eq(5040)
     end
   end
 
   describe '#reverse' do
     it 'reverses a string' do
-      expect(Solver.new.reverse('hello')).to eq('olleh')
+      expect(subject.reverse('hello')).to eq('olleh')
     end
   end
 
